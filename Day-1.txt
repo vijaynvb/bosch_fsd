@@ -1,0 +1,70 @@
+
+Web solutions:
+    1. C[process][browser] /[HTTP]/ S[process][tomcat, iis, web servers]:
+    2. type of web solutions
+        1. web sites: expose applicaion in a readable format -> get request -> [Frontent applications, react, angular, vuejs] -> [Apache] folder exposer
+            Build -> Dist -> [html,css,js, images]
+        2. web applications -> get post -> html dynamic [Apache Tomcat -> JVM [JSP], .Net[ASP], PHP[.PHP]]
+            HTML -> predefined ui ML
+        3. web services -> [xml,json -> not html] -> C Application [js, .net, java, php] 2  S Application [js, .net, java]
+            1. soap -> POST -> [XML -> metatdata[opertaion] and data[actual data] ]
+            2. rest api's -> Post, Get, Put, Delete -> data [actual data ] -> JSON or XML 
+
+    1. CRUD Openration
+
+Wordpress -> web application
+
+Application:
+    solution for a problem 
+
+Enterprise Applications: solution for a bigger problem [domain[Bank, healthcare, education etc], oraganization]
+    Bank: Credit and debit on a account
+        1. web portals
+            1. employees
+            2. customers
+        2. Mobile apps 
+        3. IOT
+        4. ATM's 
+        ... 
+
+Feasability study: 
+    1. Cost 
+    2. features 
+    3. support
+    4. licence 
+
+Consortium:
+    w3c -> HTTP, HTML, CSS, JS
+    CNCF -> dictator of standards -> db, cicd, container, orcastrators ....
+
+SOLID - principle 
+DDD -> 
+
+
+Any Application -> user management ->
+    1. Registration
+    2. Login Logout 
+    3. RBAC 
+    4. MFA 
+    5. SSO 
+    6. Social login 
+    7. AD LDAP
+
+
+Java -> comple .class 
+    1. JAR -> .class 
+        JVM
+    2. WAR -> .class + web files [html,css,js, images]
+        Tomcat server
+    3. EAR -> JAR + WAR
+        web application servers -> [web sphere, web logic ...]
+
+
+Client -> service [ru logedin user] [server side session management] statefull service 
+Client [client side session management, jwt, oauth] -> server stateless 
+
+
+horizontal scaling -> auto scaling [default=2, CPU > 80% add a new instance, CPU < 20% delete a instance, max=10]
+
+CustomerSvc session -> CartSvc1  
+            session -> CartSvc2
