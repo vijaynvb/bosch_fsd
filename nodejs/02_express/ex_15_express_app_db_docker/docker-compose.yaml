@@ -1,0 +1,23 @@
+version: '3'
+services:
+  todoapp:
+    container_name: todoapp
+    image: todoapp
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+    networks:
+      - todo-network
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    networks:
+      - todo-network
+
+networks:
+  todo-network:
+    driver: bridge

@@ -11,6 +11,10 @@ Todays Agenda:
 9. Todo API
 10. Routes 
 11. Middleware
-12. Swagger
+12. Swagger Manual
 13. Todo CRUD API Complete
- 
+14. Swagger Autogen
+15. Jest Testing
+16. Authentication and Authorization
+17. Database Integration
+18. Docker Integration and Docker Compose
