@@ -1,0 +1,16 @@
+Todays Agenda:
+
+1. NodeJS Basics
+2. Project Structure
+3. Modules commonJS vs ES6
+4. File System and Path Handling ( Blocking and Un Blocking)
+5. callback, promise and async/await
+6. Initialize Express JS Project
+7. first endpoint
+8. install nodemon
+9. Todo API
+10. Routes 
+11. Middleware
+12. Swagger
+13. Todo CRUD API Complete
+ 
