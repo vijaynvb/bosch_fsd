@@ -1,16 +1,23 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
-import swaggerSpecs from './swagger.js';
+import { readFile } from 'fs/promises';
 import todosRouter from './todosRouter.js';
+import actuator from 'express-actuator';
+
+const swaggerDoc = JSON.parse(
+  await readFile(new URL('./swagger-output.json', import.meta.url))
+);
 
 const app = express();
 const PORT = 3000;
 
 // Swagger UI setup
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 // Routes
 app.use("/todos", todosRouter);
+
+app.use(actuator("/actuator"));
 
 app.use((req, res) => {
   res.status(404).json({ error: "Not Found" });

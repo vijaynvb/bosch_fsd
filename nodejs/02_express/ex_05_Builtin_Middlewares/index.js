@@ -4,13 +4,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // string to json , json to string 
 
-app.use(express.urlencoded({ extended: true })); // url encoding and provides a decoded data 
+app.use(express.static('public')); // serve static files from the public directory
 
 app.post('/', (req, res) => {
-    const request = req.query;
-    console.log(req.query);
-    // console.log(`get request ${request}`);
-    res.send('Hello, Express!');
+    console.log(req.body);
+    res.send(req.body);
   });
 
 app.listen(PORT, () => {

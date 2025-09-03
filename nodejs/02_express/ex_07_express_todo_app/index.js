@@ -1,8 +1,7 @@
-import express, { json } from "express";
+import express from "express";
 
 const app = express();
-const PORT = 3000;
-
+const PORT = process.env.PORT || 3000;
 
 // Sample data - stored in a local variable (for simplicity)
 let todos = [
@@ -22,8 +21,7 @@ let todos = [
   }
 ];
 
-
-app.use(json());
+app.use(express.json());
 
 app.get("/todos", (req, res) => {
   res.json(todos);

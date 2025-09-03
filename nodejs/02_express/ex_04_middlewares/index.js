@@ -4,10 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use((req,res,next)=>{
     console.log(`Request middleware 1 ${req.method}`);
-    if(req.method == 'GET')
-        next();
-    else
-        res.send("only get supported")
+    next();
     console.log(`Response middleware 1 ${req.method}`);
 });
 
