@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
 // MongoDB connection
+// const MONGODB_URI = "mongodb://mongodb:27017/express_app"; // for local development, use localhost
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/express_app";// for local development, use localhost
 
 mongoose.connect(MONGODB_URI);

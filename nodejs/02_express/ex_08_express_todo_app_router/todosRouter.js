@@ -21,8 +21,8 @@ let todos = [
 ];
 
 router.get("/", (req, res) => {
-  res.json(todos);
-});
+  throw new Error("Simulated server error");
+  res.json(todos);});
 
 router.get("/:id", (req, res) => {
   const id = parseInt(req.params.id);

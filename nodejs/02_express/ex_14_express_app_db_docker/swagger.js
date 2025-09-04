@@ -7,7 +7,7 @@ const doc = {
   },
   host: 'localhost:3000',
   basePath: '/',
-  schemes: ['http'], // or ['https'] if using HTTPS
+  schemes: ['http'],
   securityDefinitions: {
     bearerAuth: {
       type: 'apiKey',
@@ -16,7 +16,34 @@ const doc = {
       name: 'Authorization',
       description: 'Enter your bearer token in the format **Bearer &lt;token&gt;**',
     },
-  }
+  },
+  definitions: {
+    User: {
+      type: "object",
+      properties: {
+        firstName: { type: "string" },
+        lastName: { type: "string" },
+        email: { type: "string", format: "email" },
+        password: { type: "string" },
+        location: { type: "string" },
+        role: { type: "string" },
+      },
+      required: ["firstName", "lastName", "email", "password", "role"],
+    },
+    Todo: {
+      type: "object",
+      properties: {
+        title: { type: "string" },
+        description: { type: "string" },
+        due: { type: "string", format: "date-time" },
+        status: {
+          type: "string",
+          enum: ["Not Started", "In Progress", "Completed", "Planned"],
+        },
+      },
+      required: ["title", "due"],
+    },
+  },
 };
 
 const outputFile = './swagger-output.json';

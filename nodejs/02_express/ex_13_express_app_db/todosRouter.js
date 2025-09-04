@@ -42,6 +42,7 @@ const authorizeAdmin = (req, res, next) => {
 
 
 router.get("/", async (req, res) => {
+  // #swagger.tags = ['Todos']
   /* #swagger.security = [{
            "bearerAuth": []
    }] */
@@ -55,6 +56,7 @@ router.get("/", async (req, res) => {
 
 
 router.get("/:id", async (req, res) => {
+  // #swagger.tags = ['Todos']
   /* #swagger.security = [{
            "bearerAuth": []
    }] */
@@ -69,17 +71,18 @@ router.get("/:id", async (req, res) => {
 
 
 router.post("/", authorizeAdmin, async (req, res) => {
+  // #swagger.tags = ['Todos']
   /* #swagger.security = [{
            "bearerAuth": []
    }] */
-  const { title, description, due, status } = req.body;
+  // Use model class to create new todo
+  const newTodo = new Todo(req.body);
   
   try {
-    const existingTodo = await Todo.findOne({ title });
+    const existingTodo = await Todo.findOne({ title: newTodo.title });
     if (existingTodo) {
       return res.status(400).json({ error: "Todo with this title already exists" });
     }
-    const newTodo = new Todo({ title, description, due, status });
     await newTodo.save();
     res.status(201).json({ message: "Todo created successfully", todo: newTodo });
   } catch (err) {
@@ -88,6 +91,7 @@ router.post("/", authorizeAdmin, async (req, res) => {
 });
 
 router.put("/:id", authorizeAdmin, async (req, res) => {
+  // #swagger.tags = ['Todos']
   /* #swagger.security = [{
            "bearerAuth": []
    }] */
@@ -104,6 +108,7 @@ router.put("/:id", authorizeAdmin, async (req, res) => {
 });
 
 router.delete("/:id", authorizeAdmin, async (req, res) => {
+  // #swagger.tags = ['Todos']
   /* #swagger.security = [{
            "bearerAuth": []
    }] */

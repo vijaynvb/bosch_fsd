@@ -6,13 +6,14 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// error handling middleware
+app.use("/todos", todosRouter);
+
+// error handling middleware 500 - server error
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: "System experiencing issues try again later or contact support" });
+  // console.error(err.stack);
+  res.status(500).json({ error: "System is busy, please try again later." });
 });
 
-app.use("/todos", todosRouter);
 
 // route not found error handling
 app.use((req, res) => {
