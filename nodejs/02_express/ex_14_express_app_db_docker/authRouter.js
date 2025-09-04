@@ -11,6 +11,21 @@ const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key";
 
 router.post("/signup", async (req, res) => {
   // #swagger.tags = ['Auth']
+  /* 
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'User signup data',
+      required: true,
+      schema: {
+        $firstName: 'user',
+        $lastName: 'lastname',
+        $email: 'user@example.com',
+        $password: 'user123',
+        location: 'City',
+        role: 'user'
+      }
+    }
+  */
   // Use model class to create new user
   const newUser = new User(req.body);
 

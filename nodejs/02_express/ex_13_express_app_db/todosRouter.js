@@ -74,7 +74,20 @@ router.post("/", authorizeAdmin, async (req, res) => {
   // #swagger.tags = ['Todos']
   /* #swagger.security = [{
            "bearerAuth": []
-   }] */
+   }]
+     #swagger.parameters['body'] = {
+       in: 'body',
+       description: 'Todo object',
+       required: true,
+       schema: {
+         $title: 'Sample Todo',
+         $description: 'Description of the todo',
+         $due: '2024-06-30T00:00:00.000Z',
+         $status: 'Not Started'
+       }
+     }
+  */
+
   // Use model class to create new todo
   const newTodo = new Todo(req.body);
   
