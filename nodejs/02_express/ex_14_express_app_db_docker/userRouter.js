@@ -29,6 +29,7 @@ router.use((req, res, next) => {
 });
 
 router.get("/", async (req, res) => {
+  // #swagger.tags = ['Users']
   /* #swagger.security = [{
            "bearerAuth": []
    }] */
@@ -41,6 +42,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
+  // #swagger.tags = ['Users']
   /* #swagger.security = [{
            "bearerAuth": []
    }] */

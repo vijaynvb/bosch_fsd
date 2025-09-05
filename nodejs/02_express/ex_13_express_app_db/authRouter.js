@@ -10,24 +10,32 @@ const router = express.Router();
 const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key";
 
 router.post("/signup", async (req, res) => {
-  const { firstName, lastName, email, password, location, role = "user" } = req.body;
+  // #swagger.tags = ['Auth']
+  /* 
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'User signup data',
+      required: true,
+      schema: {
+        $firstName: 'user',
+        $lastName: 'lastname',
+        $email: 'user@example.com',
+        $password: 'user123',
+        location: 'City',
+        role: 'user'
+      }
+    }
+  */
+  // Use model class to create new user
+  const newUser = new User(req.body);
 
   try {
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email: newUser.email });
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    // Remove manual hashing, let mongoose pre-save hook handle it
-    const newUser = new User({
-      firstName,
-      lastName,
-      email,
-      password, // plain password, will be hashed by pre-save hook
-      location,
-      role,
-    });
-
+    // Save user, mongoose pre-save hook will handle password hashing
     const savedUser = await newUser.save();
     const userWithoutPassword = savedUser.toObject();
     delete userWithoutPassword.password;
@@ -42,6 +50,7 @@ router.post("/signup", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+  // #swagger.tags = ['Auth']
   const { email, password } = req.body;
 
   try {
