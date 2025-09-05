@@ -1,0 +1,38 @@
+
+Swagger implementation: 
+    1. generate a secification -> 
+    2. use JSON or yaml file for reporesention
+    3. use are UI module to present the GUI
+
+Authentication and Authorization
+
+    1. Authentication -> login can assess 
+    2. Authorization -> Roles 
+
+Middlewares -> router files 
+    1. Authentication -> for all endpoints 
+    2. Authorization -> for selective endpoints 
+        1. admin
+        2. user 
+
+Databases: 
+     
+    propriety protocol
+    1. Client[RBDMS(workbench, pgadmin, oraclelinet, sql managemnt studio)] and Server[Rdbms(mysql, postgress, oracle, mssql), nosql]
+       Applications -> [Client libraries]
+
+    Servers:
+        RDBMS -> 
+            1. schema for your data store 
+            2. SQL 
+            3. ACID and Consistent Transactional Management
+            4. horizaontal scaling not possible 
+                Hot and Cold 
+        NoSQL
+            1. schema less ->
+            2. API's 
+                1. Functions -> tododb -> todo.find(), .save(), .update(), .delete()
+                2. rest api's
+            3. BASE and eventual consistency TM -> replication server 
+            4. horizaontal scaling possible
+                db1, db2, db3 -> loadbalancing 

@@ -1,6 +1,6 @@
 import express from "express";
 
-const router = express.Router();
+const router = express.Router(); // router feature of express
 
 // Sample data - stored in a local variable (for simplicity)
 let todos = [
@@ -21,6 +21,7 @@ let todos = [
 ];
 
 router.get("/", (req, res) => {
+  throw new Error("Custom error"); // Simulating an error
   res.json(todos);
 });
 

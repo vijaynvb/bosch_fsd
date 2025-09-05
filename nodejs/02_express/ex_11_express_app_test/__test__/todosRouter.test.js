@@ -13,6 +13,7 @@ describe('Todos API', () => {
   // Test GET /todos
   test('GET /todos should return all todos', async () => {
     const res = await request(app).get('/todos');
+    // assertion -> verify the functionality
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
     expect(res.body.length).toBeGreaterThan(0);

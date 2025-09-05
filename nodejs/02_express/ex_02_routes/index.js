@@ -2,6 +2,8 @@ import express from "express";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// http://localhost:3000/todos
+
 app.get("/todos", (req, res) => {
     res.json({message: "get all objects"});
 });

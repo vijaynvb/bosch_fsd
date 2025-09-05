@@ -1,0 +1,105 @@
+Rest Resource:
+
+    Employee MS: [Employee, Department, Salary]
+
+    Resource: plural -> Employees [CRUD]
+
+    URL: scheme://ip:port/pathtoresource/resource/pathvariables?queryparams
+         http://localhost:80/api/v1/ems/Employees/{id}?filter="fulltime"&page=1&limit=10
+         https://localhost:443/api/v1/ems/Employees/{id}?filter="fulltime"&page=1&limit=10
+        Read: 
+            getall: [get http://localhost:80/api/v1/ems/Employees] send -> response object -> 4 -> status code, headers, http version, body
+            getbyid:[get http://localhost:80/api/v1/ems/Employees/1]
+            responses: 
+                200 ok
+                404 not found 
+                401 unauthorized
+                402 forbiden 
+        Create
+            add: [post http://localhost:80/api/v1/ems/Employees + body(json)]
+            {
+                id:1,
+                name: "vijay",
+                age:1
+            }
+            responses: 
+                201 Created
+                400 bad request
+                404 not found 
+        Update
+            update: [post http://localhost:80/api/v1/ems/Employees/10 + body(json)]
+                    [put http://localhost:80/api/v1/ems/Employees/10 + body(json)] - send whole object 
+                    {
+                        id:10,
+                        name: "vijay",
+                        age:1,
+                        phoneno: 999999
+                    }
+                    [patch http://localhost:80/api/v1/ems/Employees/10 + body(json)] - only the updated properties
+                    {
+                        phoneno:888888
+                    }
+            responses: 
+                202 Accepted
+                400 bad request
+                404 not found 
+                
+        Delete
+            Delete: [delete http://localhost:80/api/v1/ems/Employees/1]
+            responses: 
+                202 Accepted
+                400 bad request
+                404 not found 
+        Options
+            information about your service implementation
+            options: [options http://localhost:80/api/v1/ems/Employees]
+                {
+                    r: get url,
+                    c: post url, 
+                    u: put url,
+                    upartial: patch url,
+                    d: delete url 
+                }
+        head: [head http://localhost:80/api/v1/ems/Employees] -> only headers will be sent 
+        trace: find how many hops taken for reaching server 
+                [trace http://localhost:80/api/v1/ems/Employees] -> path of reaching to server
+
+        Interconnected resource reporesentation: [HATEOS] 
+            getbyid: [get http://localhost:80/api/v1/ems/Employees/1]
+                    {
+                        id:1,
+                        name: "vijay",
+                        age:1,
+                        phoneno: 999999,
+                        links:[
+                            {
+                                link: self,
+                                url: http://localhost:80/api/v1/ems/Employees/1,
+                                method: get
+                            },
+                            {
+                                link: update,
+                                url: http://localhost:80/api/v2/ems/Employees/1,
+                                method: put
+                            }
+                            {
+                                link: delete,
+                                url: http://localhost:80/api/v1/ems/Employees/1,
+                                method: delete
+                            }
+                        ]
+                    }
+
+
+CNCF -> OpenAPI Specifications: Swagger -> define all the endpoints of the service with its data models and response types
+        json or yaml format 
+        Architect -> design first approach
+                  -> code first approach -> generate the yaml and ui
+
+
+
+Web solutions:
+    3. web service 
+        2. Rest API's - express js 
+
+Server -> listening -> port -> ip 

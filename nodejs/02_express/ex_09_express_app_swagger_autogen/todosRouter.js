@@ -17,6 +17,13 @@ let todos = [
     description: "Explore Vue.js fundamentals, including components, directives, and state management.", 
     due: "2025-03-15", 
     status: "Not Started" 
+  },
+  { 
+    id: 3, 
+    title: "Learn Node.js", 
+    description: "Dive into Node.js, exploring its architecture, modules, and asynchronous programming.", 
+    due: "2025-03-20", 
+    status: "Not Started" 
   }
 ];
 

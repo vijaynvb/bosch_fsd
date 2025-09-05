@@ -1,0 +1,49 @@
+
+
+Dockers -> Containerization -> image[iso] 
+        1. applications
+        2. dependencies
+        3. os
+        4. manage virtual resource [cpu, mem, io, net]
+
+Infra
+    1. data center -> hypervisor -> [cpu, mem, io, net]
+    2. Host OS -> windows, mac -> CRE Virtual-> [cpu, mem, io, net]
+
+Client [cli, desktop, kubernete-kubelt] and server [CRE Demon]
+    CLI-> imperattive 
+    docker pull -> download image from repo docker hub
+    docker run <imagename> -> container 
+    docker exec -> connect to your container 
+        $install you application  [mongdb, todoapplication]
+        $exit
+    dokcer commit -> container name + image name 
+        mongo, todo 
+    docker push todo
+
+    Dockerfile -> Declarative statements
+        1. file ->
+        2. docker build -t nameoftheimage[todo] /home/dockerfile
+        3. docker push docker hub
+    
+
+# To create an image 
+
+   $ docker build -t vijaynvb/todobosch:1.0 . 
+   $ docker push vijaynvb/todobosch:1.0 
+
+# To deploy
+
+   $ docker network ls
+   $ docker network create todo-network
+   $ docker run -d -p 27017:27017 --network todo-network --name mongodb mongo:latest
+   $ docker run -p 3000:3000 --network todo-network --name todoapp vijaynvb/todobosch:1.0 
+
+   $ docker inspect todo-network
+   
+Horizontal scaling -> 
+
+Artifactory: 
+    1. JFrog -> executables [your application for deployment] -> dependencies 
+    2. Docker hub, ACR, ECR, GCR -> Images -> container 
+
