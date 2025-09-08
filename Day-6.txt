@@ -1,0 +1,26 @@
+Microservice: 6
+    1. Modularity -> 
+    2. Autonomous -> versionings, single db for each service [SPF],
+    3. Hide implementation details -> use any technology for implmeneting ur service ->  Rest API, HTTP, JSON 
+    4. Stateless -> never use server side sessions, use client side session management -> Tokens[Jwt, OAuth] - cookies
+    5. Automation -> support for CI/CD implementation -> Docker, .env file
+    6. Observability -> supprot for monitoring your application -> express-actuator ->  /health, /metrics, /info 
+        tools - splunk, promethos, graphana, fluentd, cloudwatch, analytics 
+
+Rest Principles: 6 
+    1. C/S -> pull request based application 
+    2. Resources -> by identityfying the entites where we can perform CRUD Opertaions
+    3. Cache -> 
+    4. URL -> http [CRUD]
+    5. stateless
+    6. Hateos, interconnect resource representation
+
+Python: 
+    1. Baiscs of Rest API's
+    2. FastAPI
+    3. UVICorn
+    4. Swagger
+    5. path and query Params
+    6. Model creation for validations
+    7. Middleware
+    8. application configurations
