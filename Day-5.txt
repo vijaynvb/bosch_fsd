@@ -47,3 +47,19 @@ Artifactory:
     1. JFrog -> executables [your application for deployment] -> dependencies 
     2. Docker hub, ACR, ECR, GCR -> Images -> container 
 
+
+
+Python: 
+
+    Virtual Environments: [project1 [c intrepreter], project2 [java interpreter]]
+        Developer paly area -> python -> pip install package 
+
+    hello.py 
+        print("Hello world)
+
+    Two Type of Application 
+        1. Jupyter Notebooks -> ipynb
+        2. app .py files -> python app.py
+
+Mutable: -> mutants -> x men -> modified 
+immutable -> once -> cant be modified 

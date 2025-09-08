@@ -1,5 +1,8 @@
 nodejs/.DS_Store
 nodejs/node_modules
+python/.DS_Store
+**/__pycache__/
+python/venv
 .vscode
 **/node_modules
 **/package-lock.json
@@ -23,3 +26,4 @@ tmp/
 build/
 uploads/
 public/uploads/
+
