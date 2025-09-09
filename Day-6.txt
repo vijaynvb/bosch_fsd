@@ -21,7 +21,25 @@ Python:
     3. UVICorn
     4. Swagger
     5. path and query Params
-    6. Model creation for validations
-    7. Middleware
+    6. Model creation for validations -> pydantic -> serialization library -> json -> object -> json 
+    7. Middleware -> 
+        1. Custom Middlewares -> @app.middlewares("http")
+        2. Built in -> app.add_middlewares("fastapi.TrustedHostMiddleware")
+        3. third party -> app.add_middlewares("LogMiddlewares");
     8. application configurations
-    9. 
+        1. python_dotenv -> .env 
+    9. Project structure 
+        1. File category -> grouping of the files wrt its technical implementations
+        2. Module category -> group your file as per modules 
+    10. example app 
+    11. todo crud 
+    12. Error Management 
+
+Implement a User Resource in the todo project with below fields 
+    id: int
+    name: str
+    email: str
+    password: str 
+    isActive: boolean
+and perform crud operations on the resource 
+by following the project structure 

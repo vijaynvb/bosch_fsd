@@ -1,0 +1,13 @@
+Grovy -> IDE ->  Intelij 
+CI/CD -> Azure depoloy -> 
+            1. Manual 
+            2. CI/CD Use cases 
+              prefered -> Azure devops  [Pipelines, Artifacts, repo, project] 
+                            Azure -> 
+                                1. Infrastructure -> AKS, Compute, web apps 
+                                2. Azure Devops
+                       -> GitHub Actions [workflows, Release, git, project] -> push into their git repo -> personal 
+                            Todo ->
+                                1. Personal []
+                                2. azure -> infrastructure 
+                       -> Jenkins []

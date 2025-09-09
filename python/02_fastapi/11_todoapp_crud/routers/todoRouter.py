@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 from schemas.todoSchema import TodoOut, TodoCreate, TodoUpdate
 from services import todoService as todo_service
-
+from typing import List
 router = APIRouter()
 
-@router.get("/", response_model=list[TodoOut])
+@router.get("/", response_model=List[TodoOut])
 def list_todos():
     return todo_service.get_all_todos()
 
