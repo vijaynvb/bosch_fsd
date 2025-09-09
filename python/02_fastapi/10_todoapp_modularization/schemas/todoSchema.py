@@ -1,9 +1,8 @@
 from pydantic import BaseModel
-
+# configure your pydantic model to work with ORM objects for validations
 class TodoOut(BaseModel):
     id: int
-    title: str
     completed: bool
 
-    class Config:
-        orm_mode = True
+    # class Config:
+    #     from_attributes = True

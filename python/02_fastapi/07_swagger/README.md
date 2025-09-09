@@ -24,6 +24,10 @@ In FastAPI, your path operations, parameters, and models **automatically generat
 Sometimes, you may want to disable Swagger docs in production for **security** or **performance** reasons.
 You can do this by controlling the `openapi_url` parameter:
 
+```bash
+pip install pydantic_settings
+```
+
 ```python
 from fastapi import FastAPI
 from pydantic_settings import BaseSettings

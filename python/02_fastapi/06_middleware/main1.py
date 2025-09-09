@@ -1,19 +1,11 @@
 # Custom Middleware Example
 
 import asyncio
-from fastapi import FastAPI, Request
-import time
+from fastapi import FastAPI
+from LoggingMiddleware import LoggingMiddleware
 
 app = FastAPI()
 
-from starlette.middleware.base import BaseHTTPMiddleware
-
-class LoggingMiddleware(BaseHTTPMiddleware):
-    async def dispatch(self, request: Request, call_next):
-        print("Request received at", time.strftime("%X"))
-        response = await call_next(request)
-        print("Response sent at", time.strftime("%X"))
-        return response
 
 app.add_middleware(LoggingMiddleware)
 
