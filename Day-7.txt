@@ -11,3 +11,13 @@ CI/CD -> Azure depoloy ->
                                 1. Personal []
                                 2. azure -> infrastructure 
                        -> Jenkins []
+
+
+Testing:
+
+  1. Api testing -> endpoints -> fastapi TestClient 
+  2. function testing -> unit testing of a function -> pytest 
+
+
+Pytest -> platform                      sample_todos Fixture -> patch of read_todos -> lambda, write_todos -> lambda
+          application-object -> todoService   read_todos, write_todos

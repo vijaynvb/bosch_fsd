@@ -13,7 +13,7 @@ def sample_todos(monkeypatch):
     return todos
 
 # Test getting all todos
-def test_get_all_todos(sample_todos):
+def test_get_all_todos(sample_todos):  # mock/fake data to test 
     result = todoService.get_all_todos()
     assert result == sample_todos
 

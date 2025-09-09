@@ -120,6 +120,13 @@ Run specific file:
 pytest tests/test_todo_api.py -v
 ```
 
+Run specific test function:
+
+```bash
+pytest tests/test_todo_api.py::test_get_todo_success -v
+```
+
+
 Run with detailed output:
 
 ```bash

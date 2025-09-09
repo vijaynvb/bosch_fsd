@@ -1,6 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 from main import app
+from typing import List
 
 client = TestClient(app)
 
@@ -9,7 +10,7 @@ def test_list_todos():
     """Test the root path to ensure the API is working."""
     resp = client.get("/todos/")
     assert resp.status_code == 200
-    assert isinstance(resp.json(), list)
+    assert isinstance(resp.json(), List)
 
 # Test getting a todo by valid id
 def test_get_todo_success():
