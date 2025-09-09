@@ -10,11 +10,5 @@
     "username": "user1",
     "hashed_password": "$2b$12$2xWlrjrpt3dR0C.Z1uHOg.iCAAzK9wC7hzHowX6B2Er5x6hailxym",
     "role": "user"
-  },
-  {
-    "id": 3,
-    "username": "vijay",
-    "hashed_password": "$2b$12$wrELdsSNB7j40x4fTNyxPeVs5vG9ccdj51ewfhxJFQTQMkT3KE57e",
-    "role": "user"
   }
 ]
