@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from routers import todoRouter
 from error.todoNotFound import todo_not_found_exception_handler, TodoNotFoundException
+from error.MyExceptionHandler import my_general_exception_handler
 
 app = FastAPI(title="Todo App", version="1.0.0", description="Todo application API")
 
@@ -15,3 +16,5 @@ app.include_router(todoRouter.router, prefix="/todos", tags=["todos"])
 #         return todo_not_found_exception_handler(request, exc)
 
 app.add_exception_handler(TodoNotFoundException, todo_not_found_exception_handler)
+
+app.add_exception_handler(Exception, my_general_exception_handler)
