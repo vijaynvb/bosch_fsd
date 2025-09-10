@@ -5,14 +5,14 @@ from db.mongo import todo_collection  # <-- import todo_collection
 async def get_all_todos():
     todos = []
     async for todo in todo_collection.find():
-        todo["id"] = str(todo["_id"])
+        #todo["id"] = str(todo["_id"])
         todos.append(todo)
     return todos
 
 async def get_todo(id: int):
     todo = await todo_collection.find_one({"id": id})
     if todo:
-        todo["id"] = str(todo["_id"])
+        #todo["id"] = str(todo["_id"])
         return todo
     return None
 
@@ -22,7 +22,7 @@ async def create_todo(data):
     new_id = (last[0]["id"] if last else 0) + 1
     todo = {"id": new_id, "title": data.title, "completed": False}
     result = await todo_collection.insert_one(todo)
-    todo["id"] = str(result.inserted_id)
+    #todo["id"] = str(result.inserted_id)
     return todo
 
 async def update_todo(id: int, data):
@@ -34,7 +34,7 @@ async def update_todo(id: int, data):
     result = await todo_collection.update_one({"id": id}, {"$set": update_data})
     if result.modified_count == 1:
         todo = await todo_collection.find_one({"id": id})
-        todo["id"] = str(todo["_id"])
+        #todo["id"] = str(todo["_id"])
         return todo
     return None
 

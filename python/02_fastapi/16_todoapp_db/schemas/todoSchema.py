@@ -11,7 +11,7 @@ class TodoUpdate(BaseModel):
     completed: bool = None
 
 class TodoOut(TodoBase):
-    id: str  # <-- changed from int to str
+    id: int  # <-- changed from int to str
     title: str
     completed: bool
 

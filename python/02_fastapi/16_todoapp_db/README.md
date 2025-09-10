@@ -1,7 +1,12 @@
 # TodoApp with MongoDB (Async DB)
 
 We replaced JSON file storage with MongoDB using the Motor driver (async Mongo client).
+---
+# **Run MongoDB container**:
 
+```bash
+docker run -d -p 27017:27017 --name mongodb-container mongo:latest
+```
 ---
 
 ## Database Connection (`db/mongo.py`)
