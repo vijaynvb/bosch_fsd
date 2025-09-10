@@ -70,7 +70,8 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-def get_current_user(token: str = Depends(oauth2_scheme)):
+# token internally passed to this function
+def get_current_user(token: str = Depends(oauth2_scheme)): # get the token from the request
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -87,7 +88,7 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
     if user is None:
         raise credentials_exception
     return user
-
+# authorize admin user only
 def get_current_admin(current_user: User = Depends(get_current_user)):
     if current_user.role != "admin":
         raise HTTPException(

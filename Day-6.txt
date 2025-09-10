@@ -34,6 +34,17 @@ Python:
     10. example app 
     11. todo crud 
     12. Error Management 
+        1. Exceptions
+        2. Handle the Exceptions middlewares
+    13. Unit Test 
+        1. Endpoint testing -> TestClient 
+        2. Functions -> Pytest 
+    14. Authenticataion and Authorization
+        1. secure the endpoints [Client validation, role based access RBAC]
+    15. Observablity 
+    16. database 
+    17. deployments 
+
 
 Implement a User Resource in the todo project with below fields 
     id: int

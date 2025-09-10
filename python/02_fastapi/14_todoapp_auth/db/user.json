@@ -2,13 +2,13 @@
   {
     "id": 1,
     "username": "admin",
-    "hashed_password": "$2a$12$qy0EXtAjWTINZ/sGCM3fpeLtmBsT16m64t7RopPmmupli5wvPh7De",
+    "hashed_password": "$2b$12$RpCf4/6f/.pGGEZuwwq9CeoP4RK1cRRfc438SpponGrHGL9RBm66.",
     "role": "admin"
   },
   {
     "id": 2,
-    "username": "user1",
-    "hashed_password": "$2b$12$2xWlrjrpt3dR0C.Z1uHOg.iCAAzK9wC7hzHowX6B2Er5x6hailxym",
+    "username": "vijay",
+    "hashed_password": "$2b$12$hL1fFIiOlXpQOLfRl6r63ubXwalzxVhIyw6KmKQnR3qGFnsAItGna",
     "role": "user"
   }
 ]

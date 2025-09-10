@@ -1,0 +1,73 @@
+Python
+
+    14. Authenticataion and Authorization
+         1. secure the endpoints [Client validation, role based access RBAC]
+         2. Dependency Injection -> FastAPI feature 
+         3. JWT Token management in server -> OAuth2, OpenID, JWT
+    15. Observablity 
+        1. Apllication to provide status and information of its state
+        2. pyctuator
+    16. database 
+    17. deployments
+
+
+
+Signup -> db 
+Login -> credentials -> token [Oauth2PasswordBearer] -> JWT -> Client 
+
+secured routes -> token -> headers Authorization Bearer token
+    1. how secure your routes
+    2. how to validate the token 
+
+Dependency Injection -> 
+
+    OOP's -> is a, has a 
+
+    class human{
+
+    }
+    class Address{
+        street
+        zipcode
+    }
+
+    class homeAddress(Address){
+
+    }
+    class workAddress(Address){
+
+    }
+
+    //  inheritance -> is a relationship
+    // employee is a human
+    // employee has a home address
+    class employee(human){
+        // tightly couple object creation
+        Address homeAddress = new Address();
+
+        if(true)
+            addressName = "workAddress"
+        else
+            addressName = "homeAddress"
+        
+        // object creation has many ways -> orm -> creating the object in runtime using the name of class 
+        Address homeAddress = getObject(addressName);
+    }
+
+
+FastAPI -> package -> Dependency injection ->
+                        IOC -> Inversion Of Control 
+                            -> bucket -> of objects to be created
+                                homeAddress
+                                workAddress 
+                                ....
+                            -> retrive the object from the bucket when needed
+
+
+Class employee(Address address = Depends(runtimeAddress)){
+}
+
+employee(homeAddress) // type
+employee(workAddress)
+
+
