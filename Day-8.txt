@@ -8,7 +8,13 @@ Python
         1. Apllication to provide status and information of its state
         2. pyctuator
     16. database 
-    17. deployments
+        1. Mongodb -> C [compas, motor] / S [Docker Instance - mongod] 
+        2. Api's functions
+    17. deployments 
+        1. Artifacts: 
+            1. executables -> bundle - zip - main invoked python main.py
+            2. package -> bundle - zip - library -> pip server
+            3. docker image -> os -> python -> venv -> pacakges -> todo application -> VM 
 
 
 
@@ -71,3 +77,5 @@ employee(homeAddress) // type
 employee(workAddress)
 
 
+Docker images: 
+    1. Declarative -> Dockerfile -> commands to create images 
