@@ -1,0 +1,68 @@
+
+
+
+
+greetings = () -> { println "Hello World"}
+
+greetings = { println "Hello World" }
+
+greetings = (name) -> { println "Hello $name"}
+
+greetings = { name -> println "Hello $name" }
+
+
+def multiply(value){
+    return value * 3
+}
+
+multiply(5)
+multipy("vijay") 
+
+
+class person{
+    private String name
+    protected int age
+    def isAlive
+
+    def person(name, age, isAlive){
+        this.name = name
+        this.age = age
+        this.isAlive = isAlive
+    }
+
+    def display(){
+        println "Name: $name, Age: $age, isAlive: $isAlive"
+    }   
+}
+
+class employee extends person{
+    private int empId
+    def empName
+
+    def employee(name, age, isAlive, empId, empName){
+        super(name, age, isAlive)
+        this.empId = empId
+        this.empName = empName
+    }
+
+    def display(){
+        super.display()
+        println "EmpId: $empId, EmpName: $empName"
+    }   
+}
+
+person p = new person("vijay", 30, true)
+
+p.display()
+p.age = 31
+p.isAlive = false
+
+employee e = new employee("vijay", 30, true, 101, "vijaykumar")
+e.display()
+
+
+
+
+Maven: 
+    1. Dependency Management -> reuse the code as Dependency
+    2. Build Automation -> compile, distribute, test 
